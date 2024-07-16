@@ -26,6 +26,7 @@ public class Register extends HttpServlet {
 
         //now we will create connection with jdbc
         try {
+            Thread.sleep(1000);
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/registerform","root","batak");
 

@@ -19,9 +19,11 @@
         <div class= "col m6 offset-m3">
             <div class="card z-depth-3"> <!-- Added z-depth-3 for shadow -->
                 <div class="card-content "  >
+                    <h5 id="msg" style="display:none" >Please wait</h5>
                     <div class="form center-align" >
+
                         <h2>Register Here</h2>
-                        <h3 id="msg"></h3>
+
                         <form action="Register" method="post" id="myform" >
                             <input type="text" placeholder="Enter your name" name="name1">
                             <input type="password" placeholder="Enter your password" name="password1">
@@ -67,6 +69,9 @@
                 console.log(f);
 
                 //we want that as soon as we submit (just before the request goes throgh ajax, the form dissapears and the loader shows up
+                $(".loader").show();
+                $(".form").hide();
+                $("#msg").show();
 
                 //now we will pass value to the servlet
 
@@ -78,11 +83,19 @@
                 success: function (data,textStatus, jqXHR) {
                         console.log(data);
                         console.log("sucess.......;")
+
+                         $(".loader").hide();
+                         $(".form").show();
+                        $("#msg").hide();
                                                            },
 
                 error: function ( jqXHR, textStatus, errorThrown) {
                         console.log(data);
                         console.log("error.......;")
+
+                        $(".loader").hide();
+                        $(".form").show();
+                        $("#msg").hide();
                                                                  }
 
 
