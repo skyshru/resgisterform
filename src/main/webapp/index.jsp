@@ -23,7 +23,7 @@
                     <div class="form center-align" >
 
                         <h2>Register Here</h2>
-                        <h5 id="msg_success" style="display:none" class="center-align green">Successfully Registered!!</h5>
+                        <h5 id="msg_success" style="display:none" class="center-align green-text">Successfully Registered!!</h5>
                         <h5 id="msg_fail" style="display:none" class="center-align red">An Error Occurred</h5>
                         <form action="Register" method="post" id="myform" >
                             <input type="text" placeholder="Enter your name" name="name1">
