@@ -19,11 +19,12 @@
         <div class= "col m6 offset-m3">
             <div class="card z-depth-3"> <!-- Added z-depth-3 for shadow -->
                 <div class="card-content "  >
-                    <h5 id="msg" style="display:none" >Please wait</h5>
+
                     <div class="form center-align" >
 
                         <h2>Register Here</h2>
-
+                        <h5 id="msg_success" style="display:none" class="center-align green">Successfully Registered!!</h5>
+                        <h5 id="msg_fail" style="display:none" class="center-align red">An Error Occurred</h5>
                         <form action="Register" method="post" id="myform" >
                             <input type="text" placeholder="Enter your name" name="name1">
                             <input type="password" placeholder="Enter your password" name="password1">
@@ -33,11 +34,15 @@
 
                         </form>
                     </div>
+
                     <div class="loader" style="display:none">
-                   <!--- display none means by default it will be hidden-->
+
+                        <!--- display none means by default it will be hidden-->
                         <div class="progress">
                             <div class="indeterminate"></div>
                         </div>
+
+                        <h4> Please wait...</h4>
 
                     </div>
                 </div>
@@ -71,7 +76,7 @@
                 //we want that as soon as we submit (just before the request goes throgh ajax, the form dissapears and the loader shows up
                 $(".loader").show();
                 $(".form").hide();
-                $("#msg").show();
+
 
                 //now we will pass value to the servlet
 
@@ -86,7 +91,7 @@
 
                          $(".loader").hide();
                          $(".form").show();
-                        $("#msg").hide();
+                         $("#msg_success").show();
                                                            },
 
                 error: function ( jqXHR, textStatus, errorThrown) {
@@ -95,7 +100,7 @@
 
                         $(".loader").hide();
                         $(".form").show();
-                        $("#msg").hide();
+                        $("#msg_fail").hide();
                                                                  }
 
 
